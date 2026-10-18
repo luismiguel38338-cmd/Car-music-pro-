@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Radio Chipeo — Pioneer Car Audio</title>
+  <meta name="description" content="Radio Chipeo Pioneer DEH-4250BT Car Audio Simulation con Ecualizadores, Kitipo y Bajos 100% Gratis e Instalable." />
+  
+  <!-- PWA & Mobile Web App Meta -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Radio Chipeo">
+  <meta name="theme-color" content="#06070a">
+  <meta name="application-name" content="Radio Chipeo">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Radio Chipeo — Pioneer Car Audio" />
+  <meta property="og:description" content="Radio Chipeo Pioneer DEH-4250BT Car Audio Simulation con Ecualizadores, Kitipo y Bajos 100% Gratis e Instalable." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/icon-512.png" />
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Orbitron:wght@700;900&display=swap">
+  <link rel="stylesheet" href="styles.css?v=20261018-4">
+  <link rel="stylesheet" href="admin.css?v=20261018-4">
+  <link rel="stylesheet" href="intro-chipeo.css?v=20261018-4">
+</head>
+<body>
+
+  <!-- Elemento de compatibilidad oculto para prevenir errores si se busca ldimg -->
+  <div id="ld" style="display:none;" aria-hidden="true">
+    <img id="ldimg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" />
+  </div>
+
+  <!-- Caja del radio Pioneer DEH-4250BT con voltímetro y ecualizadores -->
+  <div class="casew">
+    <div class="case" id="case">
+      <div class="vmp">
+        <div class="vmh">
+          <svg id="vms" viewBox="0 0 112 52" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+      </div>
+      <div class="cin">
+        <div class="stack">
+          <div id="eqs"></div>
+          <div id="atqs"></div>
+          <div class="wrap">
+            <div class="face" id="face">
+              <img class="bg" src="assets/img/radio-deh-4250bt.jpg" alt="Pioneer DEH-4250BT">
+              <div class="a cov om pos-01"></div>
+              <div class="a cov om pos-02"></div>
+              <img class="a om pos-03" src="assets/img/logo-dricky.png" alt="D'Ricky Diseño">
+              <div class="a disp" id="dsp">
+                <div class="t1" id="t1"></div>
+                <div class="t2" id="t2"></div>
+                <div class="t3" id="t3">
+                  <span id="t3s"></span>
+                </div>
+                <div class="ic" id="ic">▶ ❚❚</div>
+                <div class="art" id="art"></div>
+              </div>
+              <div class="a off" id="offl"></div>
+              <div class="a om pos-04"></div>
+              <div class="a om pos-05">USB</div>
+              <div class="a" id="kn">
+                <div class="a mark" id="km"></div>
+              </div>
+              <button class="h om pos-06" data-oc="eject:" title="Eject"></button>
+              <button class="h om pos-07" data-oc="power:" title="SRC/OFF"></button>
+              <button class="h om pos-08" data-oc="restart:" title="Atrás"></button>
+              <button class="h om pos-09" data-oc="phone:" title="Teléfono"></button>
+              <button class="h om pos-10" data-oc="band:" title="BAND"></button>
+              <button class="h om pos-11" data-oc="listN:" title="Lista"></button>
+              <button class="h" id="kb" title="Volumen: clic izq/der o rueda">
+                <i class="vln" id="kln"></i>
+              </button>
+              <button class="h om pos-12" data-oc="restart:"></button>
+              <button class="h om pos-13" data-oc="prev:" title="Anterior"></button>
+              <button class="h om pos-14" data-oc="next:" title="Siguiente"></button>
+              <button class="h om pos-15" data-oc="chPl:-1" title="Playlist anterior"></button>
+              <button class="h om pos-16" data-oc="chPl:1" title="Playlist siguiente"></button>
+              <button class="h om pos-17" data-oc="shuf:" title="Mix"></button>
+              <button class="h om pos-18" data-oc="toggle:" title="Play / Pausa"></button>
+              <button class="h om pos-19" data-oc="mute:" title="Mute"></button>
+              <button class="h om pos-20" data-oc="eq:" title="EQ"></button>
+              <button class="h om pos-21" data-oc="dmode:" title="DISP"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rot">Radio Chipeo · Pioneer Car Audio</div>
+
+  <!-- Barra de herramientas inferior -->
+  <div class="tb" id="tb">
+    <button data-oc="prev:">⏮</button>
+    <button data-oc="toggle:">⏯</button>
+    <button data-oc="next:">⏭</button>
+    <button data-oc="pickFolder:">📁 MÚSICA</button>
+    <button data-v="-1">VOL −</button>
+    <button data-v="1">VOL +</button>
+    <button data-oc="chPl:1">CARPETA ▶</button>
+    <button data-oc="nextColor:">COLOR</button>
+  </div>
+
+  <!-- Botón de Opciones -->
+  <button class="optb" id="optb">&#9881;&#65039; Opciones</button>
+
+  <!-- Modal de Opciones original -->
+  <div class="vm opt" id="optm" role="dialog" aria-label="Opciones">
+    <div class="vc">
+      <button class="vx" id="optx" aria-label="Cerrar">&#10005;</button>
+      <h2 class="opt">&#9881;&#65039; Opciones</h2>
+      <p class="vs">Cambia colores y ecualizadores. Todo 100% gratuito e interactivo.</p>
+      
+      <div class="vh">LUCES (ILLUMI)</div>
+      <div class="sw" id="sw"></div>
+      
+      <div class="vh">CAJA</div>
+      <div class="sw" id="sw2"></div>
+      
+      <div class="vh">CHUCHERO</div>
+      <div class="sw" id="sw3"></div>
+      
+      <div class="vh">DRIVERS</div>
+      <div class="sw" id="sw4"></div>
+      
+      <div class="vh">ECUALIZADORES</div>
+      <div class="eqc">
+        <button id="eqm" aria-label="Quitar ecualizador">&minus;</button>
+        <b id="eqn">1/5</b>
+        <button id="eqa" aria-label="Agregar ecualizador">+</button>
+      </div>
+      
+      <div class="vh">OTROS EQS</div>
+      <p class="vs"><b>Pre Ateq (Autotek)</b>: máximo 2. Botón LED azul y rojo con volumen independiente.</p>
+      <div class="eqc">
+        <button id="atm" aria-label="Quitar Pre Ateq">&minus;</button>
+        <b id="atn">0/2</b>
+        <button id="ata" aria-label="Agregar Pre Ateq">+</button>
+      </div>
+      
+      <p class="vs"><b>Crossover y Procesador</b> (100% Gratis): elige cuál usar. Cuidan y mejoran la calidad de salida.</p>
+      <button class="strb" id="croo" type="button">&#127899;&#65039; Elegir Crossover o Procesador</button>
+      
+      <div class="vh">FLECHA DE LOS BOTONES</div>
+      <button class="strb gn" id="parb" type="button" aria-pressed="true">&#128994; Flecha: VISIBLE</button>
+      <p class="vs">La flecha esconde o saca los botones laterales.</p>
+      
+      <div class="vh">BLUR</div>
+      <button class="strb gn" id="blurb" type="button" aria-pressed="true">&#128994; Blur: ENCENDIDO</button>
+      <p class="vs">Efecto de desenfoque dinámico que se mueve con la potencia de los bajos.</p>
+      
+      <div class="vh">MODO STREAMING</div>
+      <button class="strb" id="strb" type="button" aria-pressed="false">&#9898; Modo streaming: APAGADO</button>
+      <p class="vs">Oculta tus niveles de EQ para transmisiones en vivo.</p>
+      
+      <button class="vrs" id="optrs">Restablecer colores</button>
+    </div>
+  </div>
+
+  <!-- Contenedor de Chucheros y Bajos -->
+  <div class="spk" id="spk">
+    <div class="spkrow" id="spkrow"></div>
+    <div class="bsrow" id="bsrow"></div>
+  </div>
+
+  <!-- Botón para plegar/desplegar botones de promociones -->
+  <button class="ptog" id="ptog" type="button" aria-label="Esconder o mostrar los botones" aria-expanded="true">
+    <span>&#9664;</span>
+  </button>
+
+  <!-- Barra lateral de opciones especiales (100% Desbloqueadas y Gratuitas) -->
+  <div class="promo" id="promo">
+    <!-- PANEL DE ADMINISTRADOR DESTACADO -->
+    <div class="pc">
+      <button class="kitb admin-pc-btn" id="promoAdminBtn" type="button">👑 Panel de Administrador</button>
+      <p>Gestionar administradores y ver usuarios en línea</p>
+    </div>
+
+    <!-- BOTÓN DE INSTALAR APP PWA EN CELULAR -->
+    <div class="pc" id="pwaInstallCard" style="display:none;">
+      <button class="kitb pwa-install-btn" id="pwaInstallBtn" type="button" style="background:linear-gradient(135deg, #10b981 0%, #059669 100%) !important;border:1.5px solid #34d399 !important;color:#fff !important;font-weight:700 !important;">📲 Instalar en Celular</button>
+      <p>Instala Radio Chipeo como app nativa en tu pantalla de inicio</p>
+    </div>
+    
+    <div class="pc">
+      <button class="vipb" id="vipb"></button>
+      <p>Modelos y personalización (¡100% Gratis!)</p>
+    </div>
+    <div class="pc">
+      <button class="kitb" id="kitb">&#128266; Kitipo y Bajos</button>
+      <p>Chucheros 6-12", tablas y bajos hasta 2-21 (¡Gratis!)</p>
+    </div>
+    <div class="pc">
+      <button class="kitb crob" id="crob">&#127899;&#65039; Crossover y Procesador</button>
+      <p>Mejora de señal y filtros de audio profesionales (¡Gratis!)</p>
+    </div>
+    <div class="pc">
+      <button class="lugb" id="lugb">&#128205; Cambia tu lugar</button>
+      <p>Elige el ambiente: Colmado Ricky, Discoteca o Campo</p>
+    </div>
+    <!-- Hidden fallback buttons for legacy script references -->
+    <button class="donb" id="donb" style="display:none;" aria-hidden="true"></button>
+    <div class="pc">
+      <a class="disb" href="https://discord.gg/smCVyUgSZW" target="_blank" rel="noopener noreferrer">&#128172; Entra a mi Discord</a>
+      <p>Únete a la comunidad oficial de Radio Chipeo.</p>
+    </div>
+  </div>
+
+  <div class="hint">Radio Chipeo · Car Audio Simulation</div>
+  <div class="hint">Compatible con Celulares Android, iPhone, Tablets y PC</div>
+
+  <!-- Inicialización segura y carga de scripts versionados -->
+  <script>
+    window.bgImg = document.querySelector("#face img.bg");
+  </script>
+  <script src="p.js?v=20261018-5"></script>
+  <script src="admin.js?v=20261018-5"></script>
+  <script src="intro-chipeo.js?v=20261018-5"></script>
+
+  <!-- PWA Service Worker Registration & In-App Install Prompt -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then((reg) => {
+          console.log('Radio Chipeo PWA Service Worker activo:', reg.scope);
+          // Forzar chequeo de actualización inmediata
+          reg.update();
+        }).catch((err) => {
+          console.warn('Service Worker registro falló:', err);
+        });
+      });
+    }
+
+    // PWA Install Prompt handling
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const installCard = document.getElementById('pwaInstallCard');
+      if (installCard) installCard.style.display = 'block';
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const installBtn = document.getElementById('pwaInstallBtn');
+      if (installBtn) {
+        installBtn.addEventListener('click', async () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log('Resultado de instalación:', outcome);
+            deferredPrompt = null;
+            document.getElementById('pwaInstallCard').style.display = 'none';
+          } else {
+            alert('Para instalar en iPhone: pulsa el botón "Compartir" de Safari (icono con flecha hacia arriba) y selecciona "Agregar al inicio".');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

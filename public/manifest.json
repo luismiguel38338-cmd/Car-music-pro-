@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "name": "Radio Chipeo — Pioneer Car Audio",
+  "short_name": "RadioChipeo",
+  "description": "Simulación Pioneer DEH-4250BT Car Audio con ecualizadores, chucheros y kitipo 100% gratis.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#06070a",
+  "theme_color": "#06070a",
+  "categories": ["music", "entertainment", "utilities"],
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

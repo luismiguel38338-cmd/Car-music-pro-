@@ -1,0 +1,6 @@
+{
+  "name": "Radio Music Logos",
+  "description": "Radio station identity design studio, AI logo creator, and live interactive audio tuner with custom broadcast emblems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "admin-1",
+    "name": "Administrador Principal",
+    "username": "admin",
+    "password": "admin123",
+    "role": "Super Administrador",
+    "email": "admin@musicologos.com",
+    "createdAt": "2026-10-18T00:00:00.000Z",
+    "lastLogin": "2026-10-18T15:02:14.428Z"
+  },
+  {
+    "id": "admin-1792335734432",
+    "name": "Luis Miguel",
+    "username": "luismiguel",
+    "password": "password123",
+    "email": "luismiguel4953@gmail.com",
+    "role": "Super Administrador",
+    "createdAt": "2026-10-18T15:02:14.432Z",
+    "lastLogin": "Nunca"
+  }
+]

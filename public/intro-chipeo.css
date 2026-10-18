@@ -1,0 +1,231 @@
+/* ==========================================================
+   RADIO CHIPEO — INTRO CINEMÁTICA CYBER GRID & ELECTRIC NEON
+   Recreación exacta del video proporcionado por el usuario
+   ========================================================== */
+
+#chipeo-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647; /* Máxima prioridad sobre la pantalla */
+  background: #020408;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Oswald', 'Orbitron', Arial, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#chipeo-intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Lienzo de fondo: cuadrícula 3D cyber grid, lluvia de partículas y rayos */
+#chipeo-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Contenedor central */
+.chipeo-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 8vh, 80px);
+  width: min(90vw, 480px);
+  padding: 20px;
+}
+
+/* Título neón "radio chipeo" con efecto glitch */
+.chipeo-logo-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 0.95;
+}
+
+.chipeo-text {
+  position: relative;
+  font-family: 'Oswald', 'Orbitron', Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(48px, 11vw, 76px);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: #fff;
+  text-shadow:
+    0 0 6px #fff,
+    0 0 15px #00e5ff,
+    0 0 30px #00b0ff,
+    0 0 60px #0066ff,
+    0 0 90px #0033cc;
+  margin: 0;
+}
+
+/* Efecto glitch de corte horizontal */
+.chipeo-glitch-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #00e5ff;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.chipeo-glitch-1 {
+  animation: glitchAnim1 2.2s infinite ease-in-out alternate-reverse;
+  clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+  text-shadow: -2px 0 #00ffff, 2px 0 #0055ff;
+}
+
+.chipeo-glitch-2 {
+  animation: glitchAnim2 3.1s infinite ease-in-out alternate-reverse;
+  clip-path: polygon(0 60%, 100% 60%, 100% 78%, 0 78%);
+  text-shadow: 2px 0 #00e5ff, -2px 0 #0022ff;
+}
+
+@keyframes glitchAnim1 {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-3px, 1px); }
+  40% { transform: translate(3px, -1px); }
+  60% { transform: translate(-2px, 0); }
+  80% { transform: translate(2px, 1px); }
+}
+
+@keyframes glitchAnim2 {
+  0%, 100% { transform: translate(0, 0); }
+  15% { transform: translate(3px, -1px); }
+  35% { transform: translate(-3px, 1px); }
+  55% { transform: translate(2px, 0); }
+  75% { transform: translate(-2px, -1px); }
+}
+
+/* Barra de carga estilo cápsula con energía eléctrica */
+.chipeo-bar-outer {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 28px;
+  background: radial-gradient(circle at 50% 50%, #060e1c 0%, #02050b 100%);
+  border: 2px solid #0a4d80;
+  border-radius: 99px;
+  box-shadow:
+    inset 0 0 14px rgba(0, 0, 0, 0.9),
+    0 0 15px rgba(0, 229, 255, 0.25),
+    0 4px 20px rgba(0, 0, 0, 0.8);
+  padding: 3px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+/* Reflejo de cristal superior */
+.chipeo-bar-outer::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 12px;
+  right: 12px;
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Relleno de energía eléctrica */
+.chipeo-bar-fill {
+  position: relative;
+  height: 100%;
+  width: 0%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #0077ff 0%, #00d9ff 70%, #ffffff 100%);
+  box-shadow:
+    0 0 12px #00e5ff,
+    0 0 24px #0088ff,
+    inset 0 0 8px rgba(255, 255, 255, 0.8);
+  transition: width 0.08s linear;
+}
+
+/* Punta de chispas y rayos en la cabeza de la barra */
+.chipeo-bar-sparks {
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px #00e5ff);
+}
+
+/* Explosión final al 100% */
+.chipeo-explosion {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.chipeo-explosion.active {
+  opacity: 1;
+}
+
+.chipeo-shockwave {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 10%, #00e5ff 40%, rgba(0, 119, 255, 0.8) 70%, transparent 100%);
+  animation: shockwaveExpand 0.7s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  box-shadow: 0 0 80px 40px #00e5ff;
+}
+
+@keyframes shockwaveExpand {
+  0% { transform: scale(0.5); opacity: 1; }
+  50% { opacity: 1; }
+  100% { transform: scale(90); opacity: 0; }
+}
+
+/* Botón Omitir Intro sutil */
+.chipeo-skip-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 30;
+  background: rgba(8, 14, 24, 0.6);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: #8bbfd8;
+  font-size: 11px;
+  font-family: 'Oswald', Arial, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.chipeo-skip-btn:hover {
+  background: rgba(0, 229, 255, 0.2);
+  color: #fff;
+  border-color: #00e5ff;
+}
